@@ -1,4 +1,4 @@
 exports.index = (req, res) => {
-    res.render('index.ejs');
+    res.render('404.ejs');
     return;
 }
