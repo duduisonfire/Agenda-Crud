@@ -9,11 +9,11 @@ route.get('/', homeController.index);
 
 //Rotas de Login
 route.get('/login/', loginController.index);
-route.post('/login/', loginController.register);
+route.post('/login/register', loginController.register);
 
 
 //Rotas de ERRO 404
-route.get('/404/', errorController.index)
+route.get('/404/', errorController.index);
 
 //Exportando as rotas
 module.exports = route;

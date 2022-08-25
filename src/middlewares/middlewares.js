@@ -1,6 +1,6 @@
 exports.checkCsrfError = (err, req, res, next) => {
     if(err) {
-      return res.render('404');
+      return res.redirect('/404/');
     }
   };
   
@@ -8,4 +8,9 @@ exports.checkCsrfError = (err, req, res, next) => {
     res.locals.csrfToken = req.csrfToken();
     next();
   };
-  
+
+  exports.loginErrors = (req, res, next) => {
+    res.locals.errors = req.flash('errors');
+    console.log(res.locals.errors)
+    next();
+  };
