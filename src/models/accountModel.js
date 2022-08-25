@@ -19,6 +19,7 @@ class user {
     }
 
     async register() {
+        console.log(this.errors.length)
         if (this.validate() === false) return;
         try {
             this.user = await userModel.create(this.body);
