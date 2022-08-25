@@ -17,6 +17,6 @@ exports.register = async (req, res) => {
         }
     } catch(e) {
         console.log(e);
-        res.redirect('/404')
+        return res.redirect('/404')
     }
 };
