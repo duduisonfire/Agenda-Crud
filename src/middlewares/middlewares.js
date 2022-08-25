@@ -1,6 +1,6 @@
 exports.checkCsrfError = (err, req, res, next) => {
     if(err) {
-      return res.redirect('/404/');
+      return res.redirect('/404');
     }
   };
   

@@ -9,15 +9,15 @@ exports.register = async (req, res) => {
     
     try {
         await account.register();
+        if (account.errors !== 0) {
+            req.flash('errors', account.errors);
+            req.session.save(() => {
+                return res.redirect('/login');
+            });
+            return;
+        }
     } catch(e) {
         console.log(e);
-    }
-
-    if (account.errors !== 0) {
-        req.flash('errors', account.errors);
-        req.session.save(() => {
-            return res.redirect('/login');
-        });
-        return;
+        res.redirect('/404')
     }
 };
