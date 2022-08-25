@@ -5,9 +5,8 @@ exports.index = (req, res) => {
 };
 
 exports.register = async (req, res) => {
-    const account = new Account(req.body);
-    
     try {
+        const account = new Account(req.body);
         await account.register();
         if (account.errors !== 0) {
             req.flash('errors', account.errors);
