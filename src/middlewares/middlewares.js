@@ -9,8 +9,14 @@ exports.checkCsrfError = (err, req, res, next) => {
     next();
   };
 
-  exports.loginErrors = (req, res, next) => {
+  exports.accountCreateError = (req, res, next) => {
     res.locals.errors = req.flash('errors');
+    console.log(res.locals.errors)
+    next();
+  };
+
+  exports.accountCreateSuccess = (req, res, next) => {
+    res.locals.accountSuccess = req.flash('accountCreateSuccess');
     console.log(res.locals.errors)
     next();
   };

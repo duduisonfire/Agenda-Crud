@@ -5,3 +5,11 @@
        <% });%> 
     </div>
 <% } %> 
+
+<% if (accountSuccess.length > 0) { %> 
+    <div class="alert alert-success">
+        <% accountSuccess.forEach(success => { %> 
+            <%= success %><br> 
+       <% });%> 
+    </div>
+<% } %> 

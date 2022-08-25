@@ -5,18 +5,22 @@ exports.index = (req, res) => {
 };
 
 exports.register = async (req, res) => {
+    const account = new Account(req.body);
     try {
-        const account = new Account(req.body);
         await account.register();
-        if (account.errors !== 0) {
-            req.flash('errors', account.errors);
-            req.session.save(() => {
-                return res.redirect('/login');
-            });
-            return;
-        }
     } catch(e) {
         console.log(e);
         return res.redirect('/404')
     }
+    if (account.errors > 0) {
+        req.flash('errors', account.errors);
+        req.session.save(() => {
+            return res.redirect('/login');
+        });
+    }
+    req.flash('accountCreateSuccess', 'Conta criada com sucesso.');
+    req.session.save(() => {
+        return res.redirect('/login');
+    });
+    return;
 };
