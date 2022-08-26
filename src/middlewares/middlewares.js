@@ -12,6 +12,10 @@ exports.checkCsrfError = (err, req, res, next) => {
   exports.messages = (req, res, next) => {
     res.locals.errors = req.flash('errors');
     res.locals.accountSuccess = req.flash('accountCreateSuccess');
-    console.log(res.locals.errors)
+    next();
+  };
+
+  exports.activeSession = (req, res, next) => {
+    res.locals.user = req.session.user;
     next();
   };

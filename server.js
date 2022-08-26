@@ -9,7 +9,7 @@ const routes = require('./routes');
 const path = require('path');
 const helmet = require('helmet');
 const csrf = require('csurf');
-const { checkCsrfError, csrfMiddleware, messages} = require('./src/middlewares/middlewares');
+const { checkCsrfError, csrfMiddleware, messages, activeSession} = require('./src/middlewares/middlewares');
 
 mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -45,6 +45,7 @@ app.use(csrf());
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(messages);
+app.use(activeSession);
 app.use(routes);
 
 app.on('ready', () => {
