@@ -6,13 +6,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
+          <%if (user) {%> 
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="/contato">Cadastrar Contato</a>
+            </div>
+          <%}%>
         </div>
-        <%if (!user) {%> 
-        <div class="navbar-nav">
-          <a class="nav-link" aria-current="page" href="/login">Entrar</a>
-        </div>
-        <%} else {%>
+        <%if (user) {%> 
           <div class="navbar-nav">
             <a class="nav-link" aria-current="page" href="/login/logout">Sair</a>
           </div>

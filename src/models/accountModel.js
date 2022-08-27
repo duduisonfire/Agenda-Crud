@@ -21,7 +21,6 @@ class user {
 
     async register() {
         const userExistCheck = await this.userExists();
-        console.log(test);
         if ((this.validate() === false ) || userExistCheck) return;
         const salt = bcrypt.genSaltSync();
         this.body.password = bcrypt.hashSync(this.body.password, salt);
@@ -29,7 +28,7 @@ class user {
     }
 
     async login() {
-        if (this.errors > 0) return;
+        if (this.errors.length > 0) return;
         this.user = await userModel.findOne({email: this.body.email});
 
         if (this.user === null){
@@ -57,7 +56,7 @@ class user {
 
     validate() {
         this.checkError();
-        if (this.errors != 0) {
+        if (this.errors.length != 0) {
             return false;
         }
 

@@ -1,4 +1,9 @@
 exports.index = (req, res) => {
-    res.render('index.ejs');
-    return;
+    if (req.session.user){
+        res.render('index.ejs');
+        return;
+    } else {
+        res.redirect('login');
+        return;
+    }
 }
