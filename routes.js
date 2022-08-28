@@ -18,6 +18,7 @@ route.get('/login/logout', loginController.logout);
 //Rotas de Cadastro de Contatos
 route.get('/contato/', contatoController.index);
 route.post('/contato/register', contatoController.register);
+route.get('/contato/editar/:id', contatoController.edit);
 
 //Rotas de ERRO 404
 route.get('/404/', errorController.index);

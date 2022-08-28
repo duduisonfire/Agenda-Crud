@@ -25,6 +25,7 @@ exports.register = async (req, res) => {
         req.flash('accountCreateSuccess', 'Contato cadastrado com sucesso.');
         req.session.save(() => {
             return res.redirect('/contato');
+            //return res.redirect(`/contato/${contact.contato._id}`)
         });
         return;
 
@@ -33,3 +34,11 @@ exports.register = async (req, res) => {
         return res.redirect('/404')
     }
 }
+
+exports.edit = async (req, res) => {
+    const contact = new Contact(req);
+    if (!req.params.id) return res.redirect('/404');
+    const contato = await contact.findId(req.params.id);
+    if (!contato) return res.redirect('/404');
+    res.render('editarContato.ejs', {contato});
+};

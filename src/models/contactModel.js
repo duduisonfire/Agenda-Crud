@@ -25,6 +25,12 @@ class Contact {
         this.contato = null
     }
 
+    async findId(id) {
+        if (typeof id !== 'string') return;
+        const user = await contactModel.findById(id);
+        return user;
+    }
+
     async register() {
         if (this.validate() === false) return;
         this.contato = await contactModel.create(this.body);
