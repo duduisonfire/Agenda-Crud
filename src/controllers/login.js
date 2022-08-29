@@ -1,8 +1,15 @@
 const Account = require('../models/accountModel');
+const Contact = require('../models/contactModel');
 
-exports.index = (req, res) => {
+exports.index = async (req, res) => {
     if(req.session.user) {
-        return res.redirect('/');
+        const contact = new Contact(req);
+        const contactList = await contact.findList();
+        req.session.contacts = contactList;
+        req.session.save(() => {
+            return res.redirect('/');
+        });
+        return;
     }
     res.render('login.ejs');
 };
@@ -21,7 +28,7 @@ exports.login = async (req, res) => {
 
         req.session.user = login.user;
         req.session.save(() => {
-            return res.redirect('/');
+            return res.redirect('/login');
         });
 
     } catch(e) {

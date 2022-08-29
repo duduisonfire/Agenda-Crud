@@ -20,6 +20,7 @@ exports.index = async (req, res) => {
 }
 
 exports.delete = async (req, res) => {
+    if (!req.params.id) return res.render("404");
     const contact = new Contact(req);
 
     try {
