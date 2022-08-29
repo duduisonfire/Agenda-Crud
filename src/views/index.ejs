@@ -24,8 +24,8 @@
                     <td><%= obj.sobrenome %></td>
                     <td><%= obj.email %></td>
                     <td><%= obj.telefone %></td>
-                    <td><a class="btn btn-primary btn-sm" href="/editar-contato/<%= obj._id %>">Editar</a></td>
-                    <td><form action="/delete/<%= obj._id %>" method="get"><button type="submit" class="btn btn-primary btn-sm">Deletar</button></form></td>
+                    <td><a class="link-primary" href="/editar-contato/<%= obj._id %>">Editar</a></td>
+                    <td><a class="link-danger" href="/delete/<%= obj._id %>">Deletar</a></td>
                   </tr>
                 <% });%> 
               </table>
