@@ -11,7 +11,7 @@
           <div class="col my-3">
             <div class="col-lg">
                 <h4>Edite seu contato</h4>
-                <form action="/contato/register" method="POST">
+                <form action="/editar-contato/<%= contato._id %>" method="POST">
                   <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                   <div class="form-group">
                     <label>Nome</label>
@@ -29,7 +29,7 @@
                     <label>Telefone</label>
                     <input type="tel" class="form-control" name="telefone" placeholder="Telefone do Contato" value="<%= contato.telefone %>">
                   </div>
-                  <button type="submit" class="btn btn-primary  my-3"">Cadastrar Contato</button>
+                  <button type="submit" class="btn btn-primary  my-3">Editar Contato</button>
                 </form>
               </div>
           </div>

@@ -17,5 +17,6 @@ exports.checkCsrfError = (err, req, res, next) => {
 
   exports.activeSession = (req, res, next) => {
     res.locals.user = req.session.user;
+    res.locals.contacts = req.session.contacts;
     next();
   };

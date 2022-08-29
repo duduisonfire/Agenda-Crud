@@ -49,7 +49,7 @@ app.use(activeSession);
 app.use(routes);
 
 app.on('ready', () => {
-  app.listen(3000, () => {
+  app.listen(process.env.PORT, () => {
     console.log('Acessar http://localhost:3000');
     console.log('Servidor executando na porta 3000');
   });

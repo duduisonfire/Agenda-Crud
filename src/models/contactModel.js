@@ -25,10 +25,27 @@ class Contact {
         this.contato = null
     }
 
+    async delete(id) {
+        if (typeof id !== 'string') return;
+        const contact = await contactModel.findOneAndDelete({_id: id});
+    }
+
+    async edit(id) {
+        if (typeof id !== 'string') return;
+        if (this.validate() === false) return;
+        this.contato = await contactModel.findByIdAndUpdate(id, this.body, {new: true});
+
+    }
+
+    async findList() {
+        const list = await contactModel.find({contactUserOwner: this.body.contactUserOwner});
+        return list;
+    }
+
     async findId(id) {
         if (typeof id !== 'string') return;
-        const user = await contactModel.findById(id);
-        return user;
+        const contact = await contactModel.findById(id);
+        return contact;
     }
 
     async register() {

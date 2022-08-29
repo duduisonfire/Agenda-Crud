@@ -15,13 +15,19 @@
                   <th>Sobrenome</th>
                   <th>Email</th>
                   <th>Telefone</th>
+                  <th></th>
+                  <th></th>
                 </tr>
-                <tr>
-                  <td>Igor</td>
-                  <td>Tiburcio</td>
-                  <td>igor.tiburcio.cs@gmail.com</td>
-                  <td>(81)99506-9429</td>
-                </tr>
+                <% contacts.forEach(obj => { %> 
+                  <tr>
+                    <td><%= obj.nome %></td>
+                    <td><%= obj.sobrenome %></td>
+                    <td><%= obj.email %></td>
+                    <td><%= obj.telefone %></td>
+                    <td><a class="btn btn-primary btn-sm" href="/editar-contato/<%= obj._id %>">Editar</a></td>
+                    <td><form action="/delete/<%= obj._id %>" method="get"><button type="submit" class="btn btn-primary btn-sm">Deletar</button></form></td>
+                  </tr>
+                <% });%> 
               </table>
             </div>
           </div>
