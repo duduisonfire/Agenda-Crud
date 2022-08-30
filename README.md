@@ -37,6 +37,8 @@ O banco de dados é modelado com três tipos de documentos, as sessions, os cont
 
 Caso você queira testar a aplicação localmente você precisará criar um arquivo ‘.env’ na pasta raiz do projeto contendo as variáveis ‘CONNECTIONSTRING’ que ficara o endereço do banco de dados Mongo, e ‘PORT’ que indicará em qual porta o servidor vai escutar.
 
+Para iniciar o servidor use o comando "npm run devStart" ou "npm run stat" (caso esteja utilizando o Heroku).
+
 ---
 
 # Schedule-CRUD
@@ -76,4 +78,6 @@ The application was built in the MVC pattern, separating models, views and contr
 
 The database is modeled with three types of documents, sessions, saved contacts and created accounts, all having code integration.
 
-If you want to test a database locally you create a '.env' project in the root folder of the database containing as variables 'CONNECTIONSTRING' which will be the Mongo data address, and 'PORT' which will indicate which port the server goes to sensitivity.
+If you want to test a database locally you create a '.env' project in the root folder of the database containing as variables 'CONNECTIONSTRING' which will be the Mongo data address, and 'PORT' which will indicate which port the server goes to listen.
+
+To start the server use the command "npm run devStart" or "npm run stat" (if using Heroku).
