@@ -11,7 +11,7 @@ Você pode pré-visualizar este projeto no link: https://igor-crud-agenda.heroku
 
 # Técnologias
 
-Este é um projeto com front-ende e back-end completos, foram usadas as seguints técnologias para o desenvolvimento da aplicação.
+Este é um projeto com front-ende e back-end completos, foram usadas as seguintes técnologias para o desenvolvimento da aplicação.
 
  1. HTML: Para criar a marcação dos objetos da página.
  2. Bootstrap 5: Para fazer a estilização via CSS da aplicação.
