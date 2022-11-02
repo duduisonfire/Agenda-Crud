@@ -6,8 +6,6 @@ const errorController = require('./src/controllers/404.js');
 const contatoController = require('./src/controllers/contato.js');
 const editarContatoController = require('./src/controllers/editar-contato.js');
 
-
-
 //Rotas da Home
 route.get('/', homeController.index);
 route.get('/delete/:id', homeController.delete);
