@@ -13,7 +13,7 @@ route.get('/delete/:id', homeController.delete);
 //Rotas de Login
 route.get('/login/', loginController.index);
 route.post('/login/register', loginController.register);
-route.post('/login/login', loginController.login);
+route.post('/login/', loginController.login);
 route.get('/login/logout', loginController.logout);
 
 //Rotas de Cadastro de Contatos
