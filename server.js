@@ -10,6 +10,7 @@ const path = require('path');
 const helmet = require('helmet');
 const csrf = require('csurf');
 const { checkCsrfError, csrfMiddleware, messages, activeSession} = require('./src/middlewares/middlewares');
+const cors = require('cors');
 
 mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -17,6 +18,7 @@ mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifi
   })
   .catch(e => console.log(e));
 
+app.use(cors());
 app.use(helmet());
 
 app.use(express.urlencoded({ extended: true }));
