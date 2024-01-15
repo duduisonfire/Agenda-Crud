@@ -41,11 +41,11 @@ Para iniciar o servidor use o comando "npm run devStart" ou "npm run stat" (caso
 
 ---
 
-# Schedule-CRUD
+# Contact Book-CRUD
 
 Hello, welcome, my name is Igor Tiburcio Cavalcanti and this is a project that cried throughout my JavaScript studies.
 
-This is a CRUD project (Create, Read, Update, Delete) created to be an agenda where you can register contacts only with first name and email or phone number.
+This is a CRUD project (Create, Read, Update, Delete) created to be an Contact Book where you can register contacts only with first name and email or phone number.
 
 Fully responsive layout.
 
@@ -80,4 +80,4 @@ The database is modeled with three types of documents, sessions, saved contacts 
 
 If you want to test a database locally you create a '.env' project in the root folder of the database containing as variables 'CONNECTIONSTRING' which will be the Mongo data address, and 'PORT' which will indicate which port the server goes to listen.
 
-To start the server use the command "npm run devStart" or "npm run stat" (if using Heroku).
+To start the server use the command "npm run devStart" or "npm run start" (if using Heroku).
